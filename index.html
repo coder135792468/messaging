@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <title>Page Title</title>
+    </head>
+    <body>
+     <div class="con">      
+     <div class="nav-items">
+<span class="fa back-nav fa-angle-left"></span>
+         <div class="pic-nav">
+          <div class="u-pic"><i class="fa fa-user"></i></div>
+          <img src="https://cdn.pixabay.com/photo/2016/03/26/13/09/cup-of-coffee-1280537_1280.jpg"/>
+         </div>
+         <button class="login-btn" onclick="show_login_page()">Login</button>
+         <button class="register-btn" onclick="show_registr_page()">Register</button>
+     </div>
+     <!----Top Header ----> 
+     <div class="top-header">
+                 
+      <span class="fa fa-bars menu"></span>                       
+      <p class="g-name"><span class="g">Conversation</span></p>
+      <span class="g-theme fa fa-moon-o"></span>
+ </div>
+ 
+ 
+<!-----Active User --->
+<div class="ac-u-c"> 
+<div class="ac-u-h"><span class="a">Activer Users<span><i class="go fa fa-arrow-right"></i> </div>
+<div class="ac-u">
+   
+</div>   
+</div> 
+
+   
+<!----Chats --->      
+<div class="u-chat">
+   
+</div>
+
+<!---Chat Look---->
+<div class="c-m">
+ <div class="top-c-m">
+<span class="fa fa-angle-left back-msg" onclick="close_msg_info()"></span>                       
+<div class="top-u-pic"></div>
+<div class="top-u-c-name">Conversation</div>
+<div class="top-u-c-status">Online</div>
+</div>
+ 
+<!-----Messages---->
+<div class="messages-con">
+<div class="msg u">Hello</div>
+<div class="msg other">Hello</div>
+<div class="msg u">How are you?</div>
+<div class="msg other">fine</div> 
+<div class="msg u">I want to told you somethings</div>
+<div class="msg other">Yes told me</div>
+<div class="msg u">Do you know about sololearn?</div>
+<div class="msg other">It got an latest update. Download it and enjoy</div>
+<div class="msg other">It got an latest update. Download it and enjoy</div>
+<div class="msg other">It got an latest update. Download it and enjoy</div>
+
+
+
+</div>
+ 
+<!---Send msg container----->
+<div class="send-msg-con">
+  <input class="send-msg-con" type="text" placeholder="Enter Your Message"/>
+ <button ><span class="fa fa-send-o"></span></button>  
+</div>
+
+</div>
+<!--Chats End --->
+
+
+
+
+<!----Users ------>
+<div class="users">
+    
+</div>
+
+<!-----Bottom Header ---------->
+<div class="bottom-header">            
+           <div class="nav c-g">               
+               <div onclick="chatsU(this)" class="item">
+ <i class="fa fa-comments-o"></i>
+               </div>
+               
+               <div onclick="peoples(this)" class="item p-g" id="active">
+  <i class="fa fa-users"></i>     
+               </div>                              
+           </div> 
+           <div class="navindicator">
+               <div id="indicator" class="indicator">                   
+               </div>
+           </div>
+        </div> 
+
+
+<!----- Login Registr --------->
+ <div id="db-box">
+    <h3 class="db-box-tab"><span class="page_type">Login</span><span onclick="hide_registrlogin_page()" class="fa fa-times cancel"></span></h3>
+            
+            <div class="db-box-con">
+                 <div class="grou">             
+            <input type="tex" id="name" required>
+            <span class="highligh"></span>
+            <span class="ba"></span>
+            <label>Name</label>
+            
+        </div>
+            <div class="grou">             
+            <input type="tex" id="name" required>
+            <span class="highligh"></span>
+            <span class="ba"></span>
+            <label>Password</label>
+            
+        </div>  
+         
+        
+            </div>
+            <div class="db-box-s">
+                <div class="db-btn" id="db-login">Login</div>
+            <div class="db-btn" id="db-create">Register</div>
+            </div>
+        </div>
+        
+
+</div>
+<script src="script.js"></script>
+    </body>
+</html>
