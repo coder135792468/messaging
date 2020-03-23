@@ -26,11 +26,12 @@ body {
     color:#fff;
     margin:1px 1px; 
     border-radius:2px;
+    float:left;
+    background-color:rgba(0,0,0,0.5);
+    border:none;
     display:flex;
     justify-content:center;
     align-items:center;
-    float:left;
-    background-color:rgba(0,0,0,0.5);
 }
 .g-name{
     float:center;
@@ -154,7 +155,9 @@ body {
     
 }
 
-
+button{
+    border:none;
+}
 
 .msg-box{
     width:calc(100%-10px);
@@ -281,6 +284,7 @@ body {
     display:flex;
     justify-content:center;
     align-items:center;
+    
 }
 .pic-nav img{
     position:absolute;
