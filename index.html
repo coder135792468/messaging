@@ -1,20 +1,58 @@
+<!---
+
+Personal Messenger 
+
+Hope you like it:)
+
+I make it using Firebase 
+
+domt spam other wise you will be banned from this code
+--->
+
 <!DOCTYPE html>
 <html>
-    <head><meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+<div id="loading">
+     <svg id="svg" class="spinner" width="45px" height="45px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg"><circle class="circle" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg>
+        </div>        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
     <link href="style.css" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script type="text/javascript">
+    var _0xe896=["\x41\x49\x7A\x61\x53\x79\x44\x6D\x7A\x43\x71\x6E\x49\x75\x48\x42\x41\x72\x4C\x78\x35\x35\x31\x63\x4D\x73\x37\x64\x59\x52\x64\x7A\x66\x50\x78\x64\x4F\x75\x45","\x70\x72\x6F\x6A\x65\x63\x74\x2D\x75\x6E\x6B\x6E\x6F\x77\x6E\x2D\x64\x64\x35\x32\x38\x2E\x66\x69\x72\x65\x62\x61\x73\x65\x61\x70\x70\x2E\x63\x6F\x6D","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x70\x72\x6F\x6A\x65\x63\x74\x2D\x75\x6E\x6B\x6E\x6F\x77\x6E\x2D\x64\x64\x35\x32\x38\x2E\x66\x69\x72\x65\x62\x61\x73\x65\x69\x6F\x2E\x63\x6F\x6D","\x70\x72\x6F\x6A\x65\x63\x74\x2D\x75\x6E\x6B\x6E\x6F\x77\x6E\x2D\x64\x64\x35\x32\x38","\x70\x72\x6F\x6A\x65\x63\x74\x2D\x75\x6E\x6B\x6E\x6F\x77\x6E\x2D\x64\x64\x35\x32\x38\x2E\x61\x70\x70\x73\x70\x6F\x74\x2E\x63\x6F\x6D","\x32\x31\x37\x38\x32\x31\x32\x34\x37\x31\x38\x30","\x47\x2D\x4C\x4C\x56\x33\x34\x48\x45\x35\x4B\x33","\x69\x6E\x69\x74\x69\x61\x6C\x69\x7A\x65\x41\x70\x70","\x64\x61\x74\x61\x62\x61\x73\x65"];var firebaseConfig={apiKey:_0xe896[0],authDomain:_0xe896[1],databaseURL:_0xe896[2],projectId:_0xe896[3],storageBucket:_0xe896[4],messagingSenderId:_0xe896[5],measurementId:_0xe896[6]};firebase[_0xe896[7]](firebaseConfig);var db=firebase[_0xe896[8]]()
+</script>    
         <title>Page Title</title>
     </head>
-    <body>
+    <body>   
+<div id="toast_msg">
+            Hello
+        </div>
+
+     
      <div class="con">      
      <div class="nav-items">
 <button class="back-nav"><span class="fa fa-angle-left"></span></button>
          <div class="pic-nav">
-          <div class="u-pic"><i class="fa fa-user"></i></div>
+          <div class="u-pic"><span onclick="changProfileImg()" class="fa fa-refresh"></span></div>
+          <h3 class="u-pro-name">Coder</h3>
           <img src="https://cdn.pixabay.com/photo/2016/03/26/13/09/cup-of-coffee-1280537_1280.jpg"/>
          </div>
-         <button class="login-btn" onclick="show_login_page()">Login</button>
-         <button class="register-btn" onclick="show_registr_page()">Register</button>
+         <div class="pro-settings">
+            <div class="change-name-box p-set">
+              <h2>Change Name</h2> 
+              <input type="text" class="new-name-txt-value" placeholder="Enter New Name.."/>
+  <button class="change-new-name" onclick="changeName()">Update</button>
+               
+            </div>
+            <div class="change-bio-box p-set">
+              <h2>Change Bio</h2>
+<input type="text" class="new-bio-txt-value" placeholder="Enter New Bio.."/>
+  <button class="c-new-bio" onclick="changeBio()">Update</button> 
+            </div> 
+         </div>
+         
+
      </div>
      <!----Top Header ----> 
      <div class="top-header">
@@ -29,6 +67,7 @@
 <div class="ac-u-c"> 
 <div class="ac-u-h"><span class="a">Activer Users<span><i class="go fa fa-arrow-right"></i> </div>
 <div class="ac-u">
+<div class="ac-user"></div><div class="ac-user"></div><div class="ac-user"></div><div class="ac-user"></div><div class="ac-user"></div><div class="ac-user"></div><div class="ac-user"></div><div class="ac-user"></div><div class="ac-user"></div><div class="ac-user"></div><div class="ac-user"></div><div class="ac-user"></div>
    
 </div>   
 </div> 
@@ -36,13 +75,53 @@
    
 <!----Chats --->      
 <div class="u-chat">
-   
+<div class="s-l-con">
+    <div class="s-l-p"></div>
+    <div class="s-l-line1 s-l-l"></div>
+    <div class="s-l-line2 s-l-l"></div>
+    </div> 
+<div class="s-l-con">
+    <div class="s-l-p"></div>
+    <div class="s-l-line1 s-l-l"></div>
+    <div class="s-l-line2 s-l-l"></div>
+    </div>
+<div class="s-l-con">
+    <div class="s-l-p"></div>
+    <div class="s-l-line1 s-l-l"></div>
+    <div class="s-l-line2 s-l-l"></div>
+    </div>
+<div class="s-l-con">
+    <div class="s-l-p"></div>
+    <div class="s-l-line1 s-l-l"></div>
+    <div class="s-l-line2 s-l-l"></div>
+    </div>
+<div class="s-l-con">
+    <div class="s-l-p"></div>
+    <div class="s-l-line1 s-l-l"></div>
+    <div class="s-l-line2 s-l-l"></div>
+    </div>
+<div class="s-l-con">
+    <div class="s-l-p"></div>
+    <div class="s-l-line1 s-l-l"></div>
+    <div class="s-l-line2 s-l-l"></div>
+    </div>
+<div class="s-l-con">
+    <div class="s-l-p"></div>
+    <div class="s-l-line1 s-l-l"></div>
+    <div class="s-l-line2 s-l-l"></div>
+    </div>
+<div class="s-l-con">
+    <div class="s-l-p"></div>
+    <div class="s-l-line1 s-l-l"></div>
+    <div class="s-l-line2 s-l-l"></div>
+    </div>            
+              
 </div>
 
 <!---Chat Look---->
 <div class="c-m">
  <div class="top-c-m">
-<button class="back-msg" onclick="close_msg_info()" ><span class="fa fa-angle-left"></span> </button>                      
+<button class="back-msg" onclick="slideout()" ><span class="fa fa-angle-left"></span> </button>                      
 <div class="top-u-pic"></div>
 <div class="top-u-c-name">Conversation</div>
 <div class="top-u-c-status">Online</div>
@@ -50,85 +129,43 @@
  
 <!-----Messages---->
 <div class="messages-con">
-<div class="msg u">Hello</div>
-<div class="msg other">Hello</div>
-<div class="msg u">How are you?</div>
-<div class="msg other">fine</div> 
-<div class="msg u">I want to told you somethings</div>
-<div class="msg other">Yes told me</div>
-<div class="msg u">Do you know about sololearn?</div>
-<div class="msg other">It got an latest update. Download it and enjoy</div>
-<div class="msg other">It got an latest update. Download it and enjoy</div>
-<div class="msg other">It got an latest update. Download it and enjoy</div>
-
-
 
 </div>
  
 <!---Send msg container----->
 <div class="send-msg-con">
-  <input class="send-msg-con" type="text" placeholder="Enter Your Message"/>
- <button ><span class="fa fa-send-o"></span></button>  
+  <input onfocus="typing()" onblur="notTyping()" oninput="scrollDown()"  id="textto" class="send-msg-txt-con" type="text" placeholder="Enter Your Message"/>
+ <button class="sendMsg" onclick="sendmessage()" ><span class="fa fa-send-o"></span></button>  
 </div>
 
 </div>
 <!--Chats End --->
 
 
-
-
-<!----Users ------>
-<div class="users">
-    
+        
+<!---Profile Section --->
+<div class="bottom-drawer">
+     
+  <div class="d-hold">
+<button class="bottom__up-arrow" onclick="closeDrawer()"><span class="fa fa-angle-down"></span></button>
+ 
+<div class="u-p-info">
+<div class="u-p-pic"></div>
+<div class="u-p-name"><h2>Coder</h2></div>
+<div class="u-p-bio"><p>EveryThing is Possible</p></div>
 </div>
 
-<!-----Bottom Header ---------->
-<div class="bottom-header">            
-           <div class="nav c-g">               
-               <div onclick="chatsU(this)" class="item">
- <i class="fa fa-comments-o"></i>
-               </div>
-               
-               <div onclick="peoples(this)" class="item p-g" id="active">
-  <i class="fa fa-users"></i>     
-               </div>                              
-           </div> 
-           <div class="navindicator">
-               <div id="indicator" class="indicator">                   
-               </div>
-           </div>
-        </div> 
-
-
-<!----- Login Registr --------->
- <div id="db-box">
-    <h3 class="db-box-tab"><span class="page_type">Login</span><span onclick="hide_registrlogin_page()" class="fa fa-times cancel"></span></h3>
-            
-            <div class="db-box-con">
-                 <div class="grou">             
-            <input type="tex" id="name" required>
-            <span class="highligh"></span>
-            <span class="ba"></span>
-            <label>Name</label>
-            
+                    
+    </div>                                 
         </div>
-            <div class="grou">             
-            <input type="tex" id="name" required>
-            <span class="highligh"></span>
-            <span class="ba"></span>
-            <label>Password</label>
-            
-        </div>  
-         
+     </div> 
+     
+     
+    
+    
         
-            </div>
-            <div class="db-box-s">
-                <div class="db-btn" id="db-login">Login</div>
-            <div class="db-btn" id="db-create">Register</div>
-            </div>
-        </div>
-        
-
+    
+              
 </div>
 <script src="script.js"></script>
     </body>
